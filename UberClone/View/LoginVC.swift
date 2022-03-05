@@ -14,10 +14,14 @@ class LoginVC : UIViewController {
         return label
     }()
     private lazy var emailContainerView: UIView = {
-        return UIView().inputContainerView(image:  UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
+        let view = UIView().inputContainerView(image:  UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
     private lazy var passwordContainerView: UIView = {
-        return UIView().inputContainerView(image:  UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
+        let view = UIView().inputContainerView(image:  UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
     private let emailTextField: UITextField = {
         return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
@@ -38,15 +42,13 @@ class LoginVC : UIViewController {
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         titleLabel.centerX(inView: view)
         
-        view.addSubview(emailContainerView)
-        emailContainerView.anchor(top: titleLabel.bottomAnchor,
-                                  right: view.rightAnchor,
-                                  left: view.leftAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16, height: 40)
-        
-        view.addSubview(passwordContainerView)
-        passwordContainerView.anchor(top: emailContainerView.bottomAnchor,
-                                  right: view.rightAnchor,
-                                  left: view.leftAnchor, paddingTop: 16, paddingLeft: 16, paddingRight: 16, height: 40)
+       let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView])
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 16
+        view.addSubview(stack)
+        stack.anchor(top: titleLabel.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor,
+                     paddingTop: 16,  paddingLeft: 16, paddingRight: 16)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
