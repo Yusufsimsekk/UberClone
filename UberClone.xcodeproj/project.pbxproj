@@ -12,8 +12,10 @@
 		74A3E06827CE1EB9002B190C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A3E06627CE1EB9002B190C /* Main.storyboard */; };
 		74A3E06A27CE1EBA002B190C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A3E06927CE1EBA002B190C /* Assets.xcassets */; };
 		74A3E06D27CE1EBA002B190C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A3E06B27CE1EBA002B190C /* LaunchScreen.storyboard */; };
-		74A3E07E27CF64EA002B190C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E07D27CF64EA002B190C /* LoginVC.swift */; };
+		74A3E07E27CF64EA002B190C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E07D27CF64EA002B190C /* LoginController.swift */; };
 		74A3E08027CFFC37002B190C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E07F27CFFC37002B190C /* Extensions.swift */; };
+		74A3E08227D36B25002B190C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E08127D36B25002B190C /* SignUpController.swift */; };
+		74A3E08427D3EB8B002B190C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E08327D3EB8B002B190C /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +26,10 @@
 		74A3E06927CE1EBA002B190C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A3E06C27CE1EBA002B190C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A3E06E27CE1EBA002B190C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74A3E07D27CF64EA002B190C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		74A3E07D27CF64EA002B190C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		74A3E07F27CFFC37002B190C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		74A3E08127D36B25002B190C /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		74A3E08327D3EB8B002B190C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 		74A3E07827CE1F8E002B190C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				74A3E07D27CF64EA002B190C /* LoginController.swift */,
+				74A3E08127D36B25002B190C /* SignUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,7 +104,7 @@
 		74A3E07927CE1F91002B190C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74A3E07D27CF64EA002B190C /* LoginVC.swift */,
+				74A3E08327D3EB8B002B190C /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A3E08227D36B25002B190C /* SignUpController.swift in Sources */,
+				74A3E08427D3EB8B002B190C /* AuthButton.swift in Sources */,
 				74A3E06127CE1EB9002B190C /* AppDelegate.swift in Sources */,
 				74A3E06327CE1EB9002B190C /* SceneDelegate.swift in Sources */,
-				74A3E07E27CF64EA002B190C /* LoginVC.swift in Sources */,
+				74A3E07E27CF64EA002B190C /* LoginController.swift in Sources */,
 				74A3E08027CFFC37002B190C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
