@@ -14,38 +14,16 @@ class LoginVC : UIViewController {
         return label
     }()
     private lazy var emailContainerView: UIView = {
-        let view = UIView()
-        
-        
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "ic_mail_outline_white_2x")
-        imageView.alpha = 0.87
-        view.addSubview(imageView)
-        imageView.centerY(inView: view)
-        imageView.anchor(left : view.leftAnchor, paddingLeft: 8, height: 24, width: 24)
-         
-        view.addSubview(emailTextField)
-        emailTextField.anchor(bottom : view.bottomAnchor, right: view.rightAnchor,
-                              left : imageView.rightAnchor,  paddingLeft: 10)
-        emailTextField.centerY(inView: view)
-        
-        let seperatorView = UIView()
-        view.addSubview(seperatorView)
-        seperatorView.backgroundColor = .lightGray
-        seperatorView.anchor(bottom: view.bottomAnchor, right: view.rightAnchor, left: view.leftAnchor, paddingLeft: 8, height: 0.75)
-        
-        return view
+        return UIView().inputContainerView(image:  UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
+    }()
+    private lazy var passwordContainerView: UIView = {
+        return UIView().inputContainerView(image:  UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
     }()
     private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.font = UIFont.systemFont(ofSize: 16)
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
-        tf.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
-        
-        
-        return tf
+        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
+    }()
+    private let passwordTextField: UITextField = {
+        return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
     }()
     
     
@@ -64,6 +42,11 @@ class LoginVC : UIViewController {
         emailContainerView.anchor(top: titleLabel.bottomAnchor,
                                   right: view.rightAnchor,
                                   left: view.leftAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16, height: 40)
+        
+        view.addSubview(passwordContainerView)
+        passwordContainerView.anchor(top: emailContainerView.bottomAnchor,
+                                  right: view.rightAnchor,
+                                  left: view.leftAnchor, paddingTop: 16, paddingLeft: 16, paddingRight: 16, height: 40)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
