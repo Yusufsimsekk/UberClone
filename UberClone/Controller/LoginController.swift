@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class LoginController : UIViewController {
     
@@ -38,6 +39,7 @@ class LoginController : UIViewController {
         let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -62,6 +64,35 @@ class LoginController : UIViewController {
 
     
     //MARK: - Selectors
+    
+    @objc func handleLogin(){
+        
+        
+        
+//        guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else {return}
+//        controller.configureUI()
+//        self.dismiss(animated: true, completion: nil)
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Log In problem with error : \(error.localizedDescription)")
+                return
+            }
+            let keyWindow = UIApplication.shared.connectedScenes
+                .filter({$0.activationState == . foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first?.windows
+                .filter({$0.isKeyWindow}).first
+            guard let controller = keyWindow?.rootViewController as? HomeController else { return }
+            controller.configureUI()
+            self.dismiss(animated: true, completion: nil)
+            
+            
+        }
+    }
+    
     @objc func handleShowSignUp(){
         let controller = SignUpController()
         navigationController?.pushViewController(controller, animated: true)
