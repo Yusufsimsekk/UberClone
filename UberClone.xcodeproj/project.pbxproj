@@ -18,6 +18,7 @@
 		74A3E08427D3EB8B002B190C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E08327D3EB8B002B190C /* AuthButton.swift */; };
 		74DF0FC127DA772800B791AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74DF0FC027DA772800B791AB /* GoogleService-Info.plist */; };
 		74DF0FC327DB454100B791AB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF0FC227DB454100B791AB /* HomeController.swift */; };
+		74DF0FC527DC77C300B791AB /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DF0FC427DC77C300B791AB /* LocationInputActivationView.swift */; };
 		E7B8C3BD96002EB0AD4B0C5F /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BDD4F8BD6690E085C7080C /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		74A3E08327D3EB8B002B190C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		74DF0FC027DA772800B791AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74DF0FC227DB454100B791AB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		74DF0FC427DC77C300B791AB /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		76BDD4F8BD6690E085C7080C /* Pods_UberClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				74A3E08327D3EB8B002B190C /* AuthButton.swift */,
+				74DF0FC427DC77C300B791AB /* LocationInputActivationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				74A3E06127CE1EB9002B190C /* AppDelegate.swift in Sources */,
 				74A3E06327CE1EB9002B190C /* SceneDelegate.swift in Sources */,
 				74A3E07E27CF64EA002B190C /* LoginController.swift in Sources */,
+				74DF0FC527DC77C300B791AB /* LocationInputActivationView.swift in Sources */,
 				74A3E08027CFFC37002B190C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
